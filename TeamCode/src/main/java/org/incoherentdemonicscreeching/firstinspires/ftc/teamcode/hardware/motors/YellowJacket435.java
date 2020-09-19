@@ -92,4 +92,6 @@ public class YellowJacket435 implements Motor {
         set(0);
     }
 
+    public void setTargetPosition(double position) {
+    }
 }
