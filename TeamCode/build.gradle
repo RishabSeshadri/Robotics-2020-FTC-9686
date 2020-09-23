@@ -13,5 +13,5 @@ apply from: '../build.common.gradle'
 
 // Custom definitions may go here
 dependencies {
-    implementation 'com.arcrobotics:ftclib:2.0.12'
+    implementation 'com.arcrobotics:ftclib:1.0.1'
 }
