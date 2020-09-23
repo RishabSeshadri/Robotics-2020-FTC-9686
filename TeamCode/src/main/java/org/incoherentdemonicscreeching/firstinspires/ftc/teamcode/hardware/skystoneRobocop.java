@@ -37,7 +37,7 @@ public class skystoneRobocop extends Robot {
     private RevIMU m_imu;
     private HolonomicOdometry m_odometry;
 
-    private final double ROBOT_COUNTS_PER_INCH = 145.6 / (4 * Math.PI);
+    private final double ROBOT_COUNTS_PER_INCH = 8192 / (75/25.4 * Math.PI);
 
     public skystoneRobocop(HardwareMap hardwareMap) {
         m_frontLeft = new YellowJacket435(hardwareMap, "fl");
@@ -151,6 +151,12 @@ Makes the field into a coordinate system. targetXPosition is the X2 coordinate, 
                         0,
                         Math.toRadians(IMUHeading())
                 );
+            }
+        }
+
+        while(robotMoveAngle > allowableRotationError){
+            if(m_safety == Safety.SWIFT){
+                m_drive.driveRobotCentric(0, 0, movementAngle/160);
             }
         }
 

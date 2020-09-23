@@ -54,53 +54,6 @@ public class BasicAuto extends LinearOpMode  {
         robot.reverseEncoders();
         //start of the autonomous. Aim: collect two blocks, put on foundation, set foundation into right place, and finally part into correct position
 
-
-        /*
-        This part of the program first intakes a block then goes back to the first position.
-         */
-        robot.drive(10 , 24, 1, 90, 0.1, 1);
-        robot.intake();
-        time.wait(2000);
-        robot.stopIntake();
-        robot.drive(0, 0, 1, 0, 0.1,1);
-        /*
-        The second part of this autonomous would go to the foundation and put the block into the foundation.
-         */
-        robot.drive(-100, 0, 1, 180, 0.1 , 1);
-        robot.drive(-100, 48, 1, 0, 0.1, 1);
-        robot.drive(-100, 48, 1, 180, 0.1, 1);
-        robot.liftToPosition(-3 , 0.25);
-        robot.liftToPosition(3, 0.25);
-        /*
-        This next part would put the foundation into the zone and then travel back to the original coordinate
-         */
-        robot.drive(-100, 24, 0.5, 180, 0.1, 1);
-        robot.drive(-100, -24, 0.5, 90, 0.1, 1);
-        robot.drive(-110, -24, 0.5, 90, 0.1 ,1);
-
-        robot.drive(0 , 0 , 1, 0, 0.1, 1);
-        //This puts the robot back into the same position it was earlier
-        robot.drive(-20, 0, 1, 0, 0.1,1);
-        /*Second part of autonomous
-        This first section of the second part of the autonomous intakes a block and makes the robot go back to the position.
-         */
-        robot.drive(20, 24 , 1, 90, 0.1, 1);
-        robot.intake();
-        time.wait(2000);
-        robot.stopIntake();
-        robot.drive(0, 0, 1, 0, 0.1, 1);
-        robot.drive(0,0, 1,90, 0.1 , 1);
-        /*
-        This section of the program makes the robot drive all the way to the foundation and puts a block in the foundation. After that the autonomous would end after the robot goes under the bridge.
-         */
-        robot.drive(-110, 0, 1, 90, 0.1, 1);
-        robot.liftToPosition(-3, 0.25);
-        robot.liftToPosition(9, 0.25);
-        robot.drive(-50, 0, 1, 90, 0.1, 1);
-
-
-
-
         while(opModeIsActive()){
 
             telemetry.addData("Robot Position", robot.getRobotPose());

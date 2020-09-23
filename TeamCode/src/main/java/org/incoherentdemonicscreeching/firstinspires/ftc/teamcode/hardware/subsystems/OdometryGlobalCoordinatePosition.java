@@ -8,8 +8,9 @@ import org.firstinspires.ftc.robotcore.internal.system.AppUtil;
 import java.io.File;
 
 /**
- * Created by Sarthak on 6/1/2019.
+ * Created by Rishab on 5/14/2004.
  */
+
 public class OdometryGlobalCoordinatePosition implements Runnable{
     //Odometry wheels
     private DcMotor verticalEncoderLeft, verticalEncoderRight, horizontalEncoder;
